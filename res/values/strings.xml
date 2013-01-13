@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">PIXEL Test</string>
+
+  
+    <string name="menu_about_title">About</string> 
+    <string name="menu_about_summary">http://ledpixelart.html\n\nDesigned by Open Gadgets LLC</string>
+    <string name="versionString">Version</string> 
+    
+   <string name="oneTimeSetupString">One Time Setup: Copying stock animations to your SD card.</string> 
+   <string name="bluetoothPairingString">Please ensure Bluetooth pairing has been completed prior. The Bluetooth pairing code is: 4545."</string> 
+    
+   
+   <string name="menu_instructions_title">Instructions</string>
+   <string name="setupInstructionsString">First pair your Android device to the Pixel LED frame which will show up as \'IOIO\' in Bluetooth using code 4545.\n\nTap an animation to display it on the Pixel LED frame.\n\nFollow the instructions below to add your own animations which are in animated gif format to this app:\n\nConnect your Android device to your computer with a USB cable.\n\nFrom your computer, open your Android device and copy your animated gifs to the pixel/pixelanimate folder of your SD card or internal storage if your device does not have a removeable SD card.\n\nAfter done copying, select Rescan from this app\'s menu\n\nYou can also delete the sample animated gifs leaving only your own.\n\nYou\&apos;ll get the best results by pre-scaling your animated gifs to 32x32 resolution and using a solid black background.\n\nAnimated gifs not in 32x32 resolution will be scaled automatically to 32x32. Animated gifs higher than 500x500 resolution may cause this app to crash and therefore it is recommended to use animated gifs of 300x300 resolution or lower.</string>
+   <string name="setupInstructionsStringTitle">Instructions</string>   
+     
+     
+    <string name="prefTitle">PIXEL Interactive Settings</string>
+    <string name="menu_prefs_title">Settings</string>
+    <string name="prefSummary">PIXEL Interactive Settings</string>
+    
+    <string name="scanAll">Show All Album Pics</string>
+    <string name="pref_scanAll_default">false</string>
+    <string name="scanAllSummary">Only animations in the pixel/pixelinteractive directory of your SD card will be displayed. Checking this box displays all SD card pictures.</string>
+  
+    <string name="OKText">OK</string>   
+    <string name="notFoundString">PIXEL Not Found</string>   
+   
+    <string name="selected_matrix">selected_matrix</string>
+    <string name="matrix">LED Panel Selection</string>
+    <string name="matrixSummary">Select your LED Panel model</string>    
+    <string name="dialogTitleMatrix">LED Panel Selection</string>
+    <string name="matrix_default_value">3</string>   
+    
+    <string name="fps_override">fps_override</string>
+    <string name="FPSOverrideTitle">Frames per Second</string>
+    <string name="FPSOverrideSummary">Normally you won\'t need to change this, only if you want to override the frames per second of the animations. Restart app after changing.</string>    
+    <string name="dialogTitleFPSOverride">Frames per Second</string>
+    <string name="FPSOverrideDefault">0</string>  
+    
+    <string name="bluetooth_pair">Blueooth Pairing</string>
+    <string name="bluetooth_pairSummary">Shortcut to the Bluetooth settings screen. Pair to IOIO using code: 4545</string>
+    
+    <string name="slideShowtitle">Slide Show Settings</string>
+    <string name="slideShowtitleSummary">Slide Show Settings</string>
+   
+    <string name="slideShowMode">Slide Show Mode</string>    
+    <string name="slideShowModeDefault">false</string>
+    <string name="slideShowModeSummary">Slide Show Mode</string>
+    
+    <string name="noSleep">Disable Power Savings</string>    
+    <string name="pref_noSleepDefault">false</string>
+    <string name="noSleepSummary">Forces the app to be always on, your device will not go into power savings mode while this app is running. Good if using as a Kiosk for example. </string>
+    
+    <string name="menu_rescan_title">Rescan</string>
+    <string name="rescan_screen_verbage">Now scanning your SD card or internal memory for new animations or deletions, just a moment&#8230;</string>
+    
+    <string name="startup_verbage_1">One Time Setup</string>
+    <string name="startup_verbage_2">Copying stock animations to your SD card or internal memory&#8230;</string>
+    <string name="firstTime_instructions">After this completes, select Instructions from the menu to use your own animations</string>
+  
+    <string name="loadingImagesPlsWaitTitle">Please Wait</string>
+    <string name="loadingImagesPlsWait">Loading animations, just a moment&#8230;</string>
+    
+    <string name="stopSlideShowMessage">You\'re still in slide show mode, swipe from right to left to end the slide show and then you can select a single image</string>
+    <string name="loadingImagesPlsWaitTitle">Please Wait</string>
+    <string name="loadingImagesPlsWait">Loading animations, just a moment&#8230;</string>
+    
+    <string name="debugMode">Debug Mode</string>    
+    <string name="pref_debugMode">pref_debugMode</string>
+    <string name="pref_debugModeDefault">false</string>    
+    <string name="debugModeSummary">Displays debug messages, use to see how often the Bluetooth connections are getting disconnected and connected as well as other debug messages</string>
+    
+    
+    <string name="StartInstructions">Tap to Animate</string>
+    
+     <string name="ProximageDisplayDuration">Prox Image Display Duration</string>    
+    <string name="pref_ProximageDisplayDuration">pref_imageDisplayDuration</string>
+    <string name="ProximageDisplayDurationDefault">5</string>
+    <string name="ProximageDisplayDurationSummary">Number of seconds the proximity triggered image is dispay before clearing</string>
+    
+    <string name="ProxpauseBetweenImagesDuration">Prox Pause Between Images</string>    
+    <string name="pref_ProxpauseBetweenImagesDuration">pref_pauseBetweenImagesDuration</string>
+    <string name="ProxpauseBetweenImagesDurationDefault">3</string>
+    <string name="ProxpauseBetweenImagesDurationSummary">Delay in seconds to show the next image if the user is still standing in proximity sensor range</string>
+   
+    <string name="ProximityTimerInterval">Proximity Polling Intervall</string>    
+    <string name="pref_ProximityTimerInterval">pref_ProximityTimerInterval</string>
+    <string name="ProximityTimerIntervalDefault">10</string>
+    <string name="ProximityTimerIntervalSummary">How many times per second the proximity sensor should poll</string>
+    
+    <string name="ProximityResetDelay">Prox Animation Minimum Time</string>    
+    <string name="pref_ProximityResetDelay">pref_ProximityResetDelay</string>
+    <string name="ProximityResetDelayDefault">0</string>
+    <string name="ProximityResetDelaySummary">Minimum time in seconds to show the triggered proximity animation which will continue to run as long as the subject is standing within prox sensor range. 0 means no delay.</string>
+     
+  
+    <string name="proximityThresholdLower">Prox Threshold Lower</string>    
+    <string name="pref_proxThresholdLower">pref_proxThreshold</string>
+    <string name="proximityThresholdLowerDefault">150</string>
+    <string name="proximityThresholdLowerSummary">An image will display when the proximity sensor value falls between the lower and upper thresholds</string>
+    
+     <string name="proximityThresholdUpper">Prox Threshold Upper</string>    
+    <string name="pref_proxThresholdUpper">pref_proxThresholdUpper</string>
+    <string name="proximityThresholdUpperDefault">180</string>
+    <string name="proximityThresholdUpperSummary">An image will display when the proximity sensor value falls between the lower and upper thresholds</string>
+    
+    <string name="proximityPin">Proximity Pin</string>    
+    <string name="pref_proximityPin">pref_proximityPin</string>
+    <string name="proximityPinDefault">32</string>
+    <string name="proximityPinSummary">IOIO Pin number used for the proximity sensor input</string>
+    
+     <string name="showProxValue">Show Prox Sensor Data</string>    
+    <string name="pref_showProxValue">true</string>
+    <string name="showProxValueSummary">Displays the proxmity sensor data, use to calibrate the proximity sensor and set your desired range. Restart the app after checking and unchecking this box.</string>
+    
+       <string name="ProxOn">Proximity Sensor</string>    
+    <string name="pref_ProxOn">true</string>
+    <string name="ProxOnSummary">Proximity Sensor on or off</string>
+
+    
+    <string name="proxDataInfoMsg">Proximity sensor data is shown below, stand in front of PIXEL from the desired distance where you want the images to trigger.\n\nNote that the proximity sensor has a limited range of around 30cm.\n\nThen save this proximity range by entering the Prox Threshold Lower and Prox Threshold Upper setting values in this app\&apos;s settings.\n\nUncheck the Show Prox Sensor Data box to get back to normal operation from this app\&apos;s settings and then re-start this app.</string>
+    
+    
+
+   
+    
+</resources>
