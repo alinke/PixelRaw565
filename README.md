@@ -1,4 +1,4 @@
-PixelAnimate
-============
+PixelRaw565
+===========
 
-Source for the Pixel Animate App - Android app interfacing an RGB LED Matrix
+A simple program that simply writes a raw rgb565 file to the LED matrix
