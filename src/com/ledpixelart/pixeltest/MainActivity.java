@@ -27,30 +27,23 @@ import android.widget.Toast;
 
 @SuppressLint("ParserError")
 public class MainActivity extends IOIOActivity   {
-
+	
+	//This sample code simply writes to the LED matrix but in code as opposed by loading a PNG or raw 565 file
 	
 	private static ioio.lib.api.RgbLedMatrix matrix_;
 	private static ioio.lib.api.RgbLedMatrix.Matrix KIND;  //have to do it this way because there is a matrix library conflict
-	private static android.graphics.Matrix matrix2;
 	private AnalogInput prox_;
-	private float proxValue;
-    private static final String TAG = "PixelTest";	  	
+    private static final String LOG_TAG = "PixelTest";	  	
   	private static short[] frame_ = new short[512];
-  	public static final Bitmap.Config FAST_BITMAP_CONFIG = Bitmap.Config.RGB_565;
   	private static byte[] BitmapBytes;
-  	private static InputStream BitmapInputStream;
-	private final String LOG_TAG = "PixelInteractive";
-	private boolean debug_;
 	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		debug_= false;
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
-		KIND = ioio.lib.api.RgbLedMatrix.Matrix.SEEEDSTUDIO_32x32; //v2		    	
-		BitmapInputStream = getResources().openRawResource(R.raw.selectpic32);
+		KIND = ioio.lib.api.RgbLedMatrix.Matrix.SEEEDSTUDIO_32x32; //v2		
 	    frame_ = new short [KIND.width * KIND.height];
 		BitmapBytes = new byte[KIND.width * KIND.height *2]; //512 * 2 = 1024 or 1024 * 2 = 2048			 
 	    loadRGB565(); 
@@ -59,46 +52,27 @@ public class MainActivity extends IOIOActivity   {
 	
 	
 	private void loadRGB565() {
-	 	   
-		try {
-   			int n = BitmapInputStream.read(BitmapBytes, 0, BitmapBytes.length); // reads
-   																				// the
-   																				// input
-   																				// stream
-   																				// into
-   																				// a
-   																				// byte
-   																				// array
-   			Arrays.fill(BitmapBytes, n, BitmapBytes.length, (byte) 0);
-   		} catch (IOException e) {
-   			e.printStackTrace();
-   		}
 
-   		int y = 0;
+   		
    		for (int i = 0; i < frame_.length; i++) {
-   			frame_[i] = (short) (((short) BitmapBytes[y] & 0xFF) | (((short) BitmapBytes[y + 1] & 0xFF) << 8));
-   			y = y + 2;
+   		
+   			frame_[i] = (short) (((short) 0x00000000 & 0xFF) | (((short) (short) 0x00000000 & 0xFF) << 8));  //all black
+   			//frame_[i] = (short) (((short) 0xFFF5FFB0 & 0xFF) | (((short) (short) 0xFFF5FFB0 & 0xFF) << 8));  //pink
+   			//frame_[i] = (short) (((short) 0xFFFFFFFF & 0xFF) | (((short) (short) 0xFFFFFFFF & 0xFF) << 8));  //all white
    		}
    }
-	
-   
    
    
     class IOIOThread extends BaseIOIOLooper {
   		//private ioio.lib.api.RgbLedMatrix matrix_;
     	public AnalogInput prox_;
-  		//public float proxValue;
 
   		@Override
   		protected void setup() throws ConnectionLostException {
   			matrix_ = ioio_.openRgbLedMatrix(KIND);
-  			//prox_ = ioio_.openAnalogInput(32);	
-  			
-  			// loadRGB565(); //this function loads a raw RGB565 image to the matrix
-  			matrix_.frame(frame_); //write select pic to the frame since we didn't start the timer
-  			
-  			
-  			
+  			prox_ = ioio_.openAnalogInput(32);	//if you comment out this line, no artifacts appear
+  		   //loadRGB565(); //this function loads a raw RGB565 image to the matrix
+  		   matrix_.frame(frame_); //write select pic to the frame since we didn't start the timer
   		}
 
   		//@Override
@@ -136,16 +110,12 @@ public class MainActivity extends IOIOActivity   {
   		
   		@Override
 		public void disconnected() {   			
-  			Log.i(LOG_TAG, "IOIO disconnected");
-			if (debug_ == true) {  			
-	  			showToast("Bluetooth Disconnected");
-  			}			
+  			Log.i(LOG_TAG, "IOIO disconnected");						
+	  		//showToast("Bluetooth Disconnected");
 		}
 
 		@Override
-		public void incompatible() {  //if the wrong firmware is there
-			//AlertDialog.Builder alert=new AlertDialog.Builder(context); //causing a crash
-			//alert.setTitle(getResources().getString(R.string.notFoundString)).setIcon(R.drawable.icon).setMessage(getResources().getString(R.string.bluetoothPairingString)).setNeutralButton(getResources().getString(R.string.OKText), null).show();	
+		public void incompatible() {  //if the wrong firmware is there	
 			showToast("Incompatbile firmware!");
 			showToast("This app won't work until you flash the IOIO with the correct firmware!");
 			showToast("You can use the IOIO Manager Android app to flash the correct firmware");
